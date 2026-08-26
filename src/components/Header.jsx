@@ -9,9 +9,9 @@ export default function Header() {
         role="img"
         aria-label="Toyota"
       >
-        <ellipse cx="200" cy="130" rx="185" ry="75" fill="none" stroke="currentColor" strokeWidth="15" />
-        <ellipse cx="200" cy="140" rx="52" ry="90" fill="none" stroke="currentColor" strokeWidth="15" />
-        <ellipse cx="200" cy="68" rx="98" ry="22" fill="none" stroke="currentColor" strokeWidth="15" />
+        <ellipse cx="200" cy="130" rx="185" ry="75" fill="none" stroke="currentColor" strokeWidth="14" />
+        <ellipse cx="200" cy="158" rx="60" ry="78" fill="none" stroke="currentColor" strokeWidth="14" />
+        <ellipse cx="200" cy="70" rx="92" ry="20" fill="none" stroke="currentColor" strokeWidth="14" />
       </svg>
     </header>
   );
