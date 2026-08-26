@@ -1,0 +1,454 @@
+:root {
+  --toyota-red: #eb0a1e;
+  --toyota-red-dark: #b80817;
+  --ink: #1a1a1a;
+  --ink-soft: #4a4a4a;
+  --line: #e2e2e2;
+  --bg: #f5f5f5;
+  --card-bg: #ffffff;
+  --radius: 10px;
+  --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  font-family: inherit;
+}
+
+.survey-shell {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  max-width: 560px;
+  margin: 0 auto;
+  background: var(--card-bg);
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.06);
+}
+
+.screen {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.screen-body {
+  padding: 24px 20px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.screen-body-centered {
+  align-items: center;
+  text-align: center;
+  padding-top: 64px;
+  gap: 14px;
+}
+
+/* Clock bar */
+.clock-bar {
+  width: 100%;
+  background: var(--ink);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 12px;
+  font-size: 13px;
+  letter-spacing: 0.2px;
+}
+
+.clock-icon {
+  flex-shrink: 0;
+}
+
+/* Logo & titles */
+.toyota-logo {
+  margin-top: 8px;
+}
+
+.survey-title {
+  font-size: 22px;
+  font-weight: 800;
+  margin: 4px 0 0;
+  color: var(--ink);
+}
+
+.survey-intro {
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  margin: 0;
+}
+
+/* POPIA notice */
+.popia-notice {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  margin-top: 4px;
+}
+
+.popia-notice h2 {
+  font-size: 15px;
+  margin: 0 0 10px;
+  color: var(--toyota-red);
+}
+
+.popia-section {
+  margin-bottom: 12px;
+}
+
+.popia-section:last-child {
+  margin-bottom: 0;
+}
+
+.popia-section h3 {
+  font-size: 13px;
+  margin: 0 0 4px;
+  color: var(--ink);
+}
+
+.popia-section ul {
+  margin: 0;
+  padding-left: 18px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+
+/* Consent checkbox */
+.consent-checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: var(--ink-soft);
+  cursor: pointer;
+}
+
+.consent-checkbox input {
+  margin-top: 3px;
+  width: 18px;
+  height: 18px;
+  accent-color: var(--toyota-red);
+  flex-shrink: 0;
+}
+
+/* Buttons */
+.btn {
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 13px 20px;
+  cursor: pointer;
+  transition: opacity 0.15s ease, transform 0.05s ease;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: var(--toyota-red);
+  color: #fff;
+}
+
+.btn-primary:not(:disabled):hover {
+  background: var(--toyota-red-dark);
+}
+
+.btn-secondary {
+  background: #fff;
+  color: var(--ink);
+  border: 1.5px solid var(--line);
+}
+
+.btn-block {
+  width: 100%;
+}
+
+.step-nav {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.step-nav .btn-primary {
+  flex: 1;
+}
+
+/* Progress bar */
+.progress-wrap {
+  padding: 14px 20px 0;
+}
+
+.progress-track {
+  height: 6px;
+  background: var(--line);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: var(--toyota-red);
+  transition: width 0.25s ease;
+}
+
+.progress-label {
+  display: block;
+  font-size: 12px;
+  color: var(--ink-soft);
+  margin-top: 6px;
+}
+
+/* Step question */
+.step-question {
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1.4;
+  margin: 4px 0 4px;
+}
+
+.dealer-name {
+  color: var(--toyota-red);
+}
+
+/* NPS scale */
+.nps-scale {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 8px;
+}
+
+@media (min-width: 420px) {
+  .nps-scale {
+    grid-template-columns: repeat(11, 1fr);
+  }
+}
+
+.nps-btn {
+  aspect-ratio: 1;
+  border-radius: 8px;
+  border: 2px solid var(--nps-color, var(--line));
+  background: #fff;
+  color: var(--nps-color, var(--ink));
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.nps-btn:hover {
+  background: color-mix(in srgb, var(--nps-color) 12%, white);
+}
+
+.nps-btn-selected {
+  background: var(--nps-color);
+  color: #fff;
+}
+
+.nps-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: var(--ink-soft);
+  margin-top: -6px;
+}
+
+/* Option list (5-point scales) */
+.option-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.option-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: var(--radius);
+  border: 1.5px solid var(--line);
+  background: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.option-card:hover {
+  border-color: var(--toyota-red);
+}
+
+.option-card-selected {
+  border-color: var(--toyota-red);
+  background: #fff5f5;
+}
+
+.option-radio {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid var(--line);
+  flex-shrink: 0;
+  position: relative;
+}
+
+.option-card-selected .option-radio {
+  border-color: var(--toyota-red);
+}
+
+.option-card-selected .option-radio::after {
+  content: '';
+  position: absolute;
+  inset: 3px;
+  border-radius: 50%;
+  background: var(--toyota-red);
+}
+
+/* Dissatisfaction reasons */
+.reason-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.reason-item {
+  border: 1.5px solid var(--line);
+  border-radius: var(--radius);
+  padding: 12px 14px;
+  transition: border-color 0.15s ease;
+}
+
+.reason-item-selected {
+  border-color: var(--toyota-red);
+}
+
+.reason-checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14.5px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.reason-checkbox input {
+  margin-top: 2px;
+  width: 18px;
+  height: 18px;
+  accent-color: var(--toyota-red);
+  flex-shrink: 0;
+}
+
+.reason-checkbox-sub {
+  font-weight: 500;
+  font-size: 13.5px;
+}
+
+.facilities-suboptions {
+  margin: 10px 0 4px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.suboptions-label {
+  font-size: 12.5px;
+  color: var(--ink-soft);
+  margin: 0 0 2px;
+}
+
+.elaboration-box {
+  margin: 10px 0 2px 28px;
+}
+
+.elaboration-box textarea {
+  width: 100%;
+  border: 1.5px solid var(--line);
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-family: inherit;
+  font-size: 13.5px;
+  resize: vertical;
+}
+
+.elaboration-box textarea:focus {
+  outline: none;
+  border-color: var(--toyota-red);
+}
+
+/* Yes/No toggle */
+.yes-no-toggle {
+  display: flex;
+  gap: 12px;
+}
+
+.btn-toggle {
+  flex: 1;
+  background: #fff;
+  border: 1.5px solid var(--line);
+  color: var(--ink);
+}
+
+.btn-toggle-selected {
+  border-color: var(--toyota-red);
+  background: #fff5f5;
+  color: var(--toyota-red);
+}
+
+.form-error {
+  color: var(--toyota-red-dark);
+  font-size: 13.5px;
+  margin: 0;
+}
+
+/* Thank you */
+.check-circle {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  background: var(--toyota-red);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.followup-note {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 12px 16px;
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
