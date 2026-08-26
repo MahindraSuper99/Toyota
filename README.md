@@ -98,11 +98,15 @@ the original spec's example domain.)
 
 ## Branding note
 
-The oval mark in the header (`src/components/Header.jsx`) is a hand-drawn placeholder
-approximating Toyota's logo shape, not the official logo artwork. Replace it with an
-inlined official SVG/PNG asset before going live — swap the `<svg>` block in `Header.jsx`
-for an `<img>` pointing at the licensed logo file (or an inlined `<svg>` if you have vector
-source, so it can still pick up `currentColor` for the dark header background).
+The oval mark in the header (`src/components/Header.jsx`), `public/toyota-logo.svg`, and
+`public/toyota-favicon.svg` are a hand-traced reconstruction of Toyota's logo geometry
+(three interlocking ellipses), built to closely match a reference image the user provided
+directly in chat. It is **not** the official logo artwork — this session has no way to save
+an image pasted into the conversation as a file, so there was no exact source file to copy
+from, only a redrawn approximation. Replace all three with the official licensed logo files
+before going live: swap the `<svg>` block in `Header.jsx` for an `<img>`/inlined `<svg>`
+pointing at the real asset (keep it as inline SVG with `currentColor` if you want it to
+keep working on the dark header background), and replace the two files in `public/`.
 
 Visual design (black/white with red used sparingly as an accent, pill-shaped buttons, the
 Oswald condensed headline font, the oval logo mark) was based on reference screenshots of

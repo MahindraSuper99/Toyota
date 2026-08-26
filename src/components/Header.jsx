@@ -3,15 +3,15 @@ export default function Header() {
     <header className="app-header">
       <svg
         className="header-mark"
-        viewBox="0 0 100 60"
-        width={44}
-        height={26}
+        viewBox="0 0 400 260"
+        width={54}
+        height={35}
         role="img"
         aria-label="Toyota"
       >
-        <ellipse cx="50" cy="30" rx="48" ry="22" fill="none" stroke="currentColor" strokeWidth="4" />
-        <ellipse cx="50" cy="30" rx="20" ry="28" fill="none" stroke="currentColor" strokeWidth="4" />
-        <ellipse cx="50" cy="12" rx="28" ry="9" fill="currentColor" />
+        <ellipse cx="200" cy="130" rx="185" ry="75" fill="none" stroke="currentColor" strokeWidth="15" />
+        <ellipse cx="200" cy="140" rx="52" ry="90" fill="none" stroke="currentColor" strokeWidth="15" />
+        <ellipse cx="200" cy="68" rx="98" ry="22" fill="none" stroke="currentColor" strokeWidth="15" />
       </svg>
     </header>
   );
