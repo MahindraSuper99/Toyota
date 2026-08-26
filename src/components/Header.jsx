@@ -4,14 +4,14 @@ export default function Header() {
       <svg
         className="header-mark"
         viewBox="0 0 400 260"
-        width={54}
-        height={35}
+        width={60}
+        height={39}
         role="img"
         aria-label="Toyota"
       >
-        <ellipse cx="200" cy="130" rx="185" ry="75" fill="none" stroke="currentColor" strokeWidth="14" />
-        <ellipse cx="200" cy="158" rx="60" ry="78" fill="none" stroke="currentColor" strokeWidth="14" />
-        <ellipse cx="200" cy="70" rx="92" ry="20" fill="none" stroke="currentColor" strokeWidth="14" />
+        <ellipse cx="200" cy="130" rx="180" ry="78" fill="none" stroke="currentColor" strokeWidth="16" />
+        <ellipse cx="200" cy="132" rx="78" ry="95" fill="none" stroke="currentColor" strokeWidth="16" />
+        <ellipse cx="200" cy="78" rx="115" ry="30" fill="none" stroke="currentColor" strokeWidth="16" />
       </svg>
     </header>
   );
