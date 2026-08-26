@@ -1,7 +1,7 @@
 export function getSurveyParams() {
   const params = new URLSearchParams(window.location.search);
   return {
-    dealer: params.get('dealer') || 'your Toyota dealership',
+    dealer: params.get('dealer') || 'Toyota',
     id: params.get('id') || '',
     expires: params.get('expires') || '',
   };
