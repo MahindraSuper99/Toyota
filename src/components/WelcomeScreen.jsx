@@ -6,14 +6,6 @@ export default function WelcomeScreen({ consented, onConsentChange, onContinue }
       <ClockBar />
 
       <div className="screen-body">
-        <img
-          src="/toyota-logo-placeholder.svg"
-          alt="Toyota"
-          className="toyota-logo"
-          width={180}
-          height={49}
-        />
-
         <h1 className="survey-title">New Vehicle Delivery Experience Survey</h1>
         <p className="survey-intro">
           Thank you for choosing Toyota. Your feedback helps us improve every customer's

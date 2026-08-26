@@ -1,13 +1,19 @@
 :root {
   --toyota-red: #eb0a1e;
   --toyota-red-dark: #b80817;
-  --ink: #1a1a1a;
-  --ink-soft: #4a4a4a;
+  --ink: #0a0a0a;
+  --ink-soft: #55565a;
   --line: #e2e2e2;
-  --bg: #f5f5f5;
+  --bg: #f6f6f6;
+  --bg-muted: #f0f0f0;
   --card-bg: #ffffff;
-  --radius: 10px;
-  --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --header-bg: #0a0a0a;
+  --radius: 12px;
+  --radius-pill: 999px;
+  --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial,
+    sans-serif;
+  --font-display: 'Oswald', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Helvetica, Arial, sans-serif;
 }
 
 * {
@@ -62,11 +68,25 @@ button {
   gap: 14px;
 }
 
+/* App header (persistent brand bar) */
+.app-header {
+  background: var(--header-bg);
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-mark {
+  color: #fff;
+  display: block;
+}
+
 /* Clock bar */
 .clock-bar {
   width: 100%;
-  background: var(--ink);
-  color: #fff;
+  background: var(--bg-muted);
+  color: var(--ink);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -74,20 +94,22 @@ button {
   padding: 10px 12px;
   font-size: 13px;
   letter-spacing: 0.2px;
+  border-bottom: 1px solid var(--line);
 }
 
 .clock-icon {
   flex-shrink: 0;
+  color: var(--toyota-red);
 }
 
-/* Logo & titles */
-.toyota-logo {
-  margin-top: 8px;
-}
-
+/* Titles */
 .survey-title {
-  font-size: 22px;
-  font-weight: 800;
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  line-height: 1.2;
   margin: 4px 0 0;
   color: var(--ink);
 }
@@ -109,9 +131,23 @@ button {
 }
 
 .popia-notice h2 {
+  font-family: var(--font-display);
   font-size: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
   margin: 0 0 10px;
-  color: var(--toyota-red);
+  color: var(--ink);
+}
+
+.popia-notice h2::before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--toyota-red);
+  margin-right: 8px;
 }
 
 .popia-section {
@@ -157,13 +193,13 @@ button {
 
 /* Buttons */
 .btn {
-  border: none;
-  border-radius: 8px;
+  border: 1.5px solid transparent;
+  border-radius: var(--radius-pill);
   font-size: 15px;
-  font-weight: 700;
-  padding: 13px 20px;
+  font-weight: 600;
+  padding: 13px 24px;
   cursor: pointer;
-  transition: opacity 0.15s ease, transform 0.05s ease;
+  transition: opacity 0.15s ease, transform 0.05s ease, background 0.15s ease;
 }
 
 .btn:active {
@@ -176,18 +212,23 @@ button {
 }
 
 .btn-primary {
-  background: var(--toyota-red);
+  background: var(--ink);
+  border-color: var(--ink);
   color: #fff;
 }
 
 .btn-primary:not(:disabled):hover {
-  background: var(--toyota-red-dark);
+  background: #2a2a2a;
 }
 
 .btn-secondary {
   background: #fff;
   color: var(--ink);
-  border: 1.5px solid var(--line);
+  border: 1.5px solid var(--ink);
+}
+
+.btn-secondary:not(:disabled):hover {
+  background: var(--bg-muted);
 }
 
 .btn-block {
@@ -210,7 +251,7 @@ button {
 }
 
 .progress-track {
-  height: 6px;
+  height: 5px;
   background: var(--line);
   border-radius: 4px;
   overflow: hidden;
@@ -231,10 +272,12 @@ button {
 
 /* Step question */
 .step-question {
-  font-size: 19px;
-  font-weight: 700;
-  line-height: 1.4;
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.35;
   margin: 4px 0 4px;
+  color: var(--ink);
 }
 
 .dealer-name {
@@ -306,12 +349,12 @@ button {
 }
 
 .option-card:hover {
-  border-color: var(--toyota-red);
+  border-color: var(--ink);
 }
 
 .option-card-selected {
-  border-color: var(--toyota-red);
-  background: #fff5f5;
+  border-color: var(--ink);
+  background: var(--bg-muted);
 }
 
 .option-radio {
@@ -350,7 +393,7 @@ button {
 }
 
 .reason-item-selected {
-  border-color: var(--toyota-red);
+  border-color: var(--ink);
 }
 
 .reason-checkbox {
@@ -404,7 +447,7 @@ button {
 
 .elaboration-box textarea:focus {
   outline: none;
-  border-color: var(--toyota-red);
+  border-color: var(--ink);
 }
 
 /* Yes/No toggle */
@@ -416,14 +459,14 @@ button {
 .btn-toggle {
   flex: 1;
   background: #fff;
-  border: 1.5px solid var(--line);
+  border: 1.5px solid var(--ink);
   color: var(--ink);
 }
 
 .btn-toggle-selected {
-  border-color: var(--toyota-red);
-  background: #fff5f5;
-  color: var(--toyota-red);
+  border-color: var(--ink);
+  background: var(--ink);
+  color: #fff;
 }
 
 .form-error {

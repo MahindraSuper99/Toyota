@@ -98,12 +98,15 @@ the original spec's example domain.)
 
 ## Branding note
 
-`public/toyota-logo-placeholder.svg` is a plain text wordmark placeholder, not the official
-Toyota logo artwork. Replace it with the licensed Toyota logo file before going live. Brand
-colour used throughout (`--toyota-red: #EB0A1E`) matches Toyota's public brand red.
+The oval mark in the header (`src/components/Header.jsx`) is a hand-drawn placeholder
+approximating Toyota's logo shape, not the official logo artwork. Replace it with an
+inlined official SVG/PNG asset before going live — swap the `<svg>` block in `Header.jsx`
+for an `<img>` pointing at the licensed logo file (or an inlined `<svg>` if you have vector
+source, so it can still pick up `currentColor` for the dark header background).
 
-This project could not fetch toyota.co.za directly during setup (outbound access to that
-domain was blocked in the build environment), so the visual styling is based on Toyota's
-well-known public brand identity (red/black/white, clean sans-serif, minimal rounded UI)
-rather than a live scrape of the site. Adjust fonts/spacing/imagery to match the current
-site if needed.
+Visual design (black/white with red used sparingly as an accent, pill-shaped buttons, the
+Oswald condensed headline font, the oval logo mark) was based on reference screenshots of
+toyota.co.za the user supplied directly, since this project could not fetch toyota.co.za
+itself — outbound access to that domain is blocked in the build environment. Cross-check
+against the live site before shipping, particularly the exact reds/greys and the header
+layout on mobile.

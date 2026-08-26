@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react';
 import { getSurveyParams, isLinkExpired } from './utils/urlParams.js';
 import { getDeviceInfo } from './utils/deviceInfo.js';
 import { OSAT_TRIGGERS_DISSATISFACTION } from './constants/survey.js';
+import Header from './components/Header.jsx';
 import WelcomeScreen from './components/WelcomeScreen.jsx';
 import ProgressBar from './components/ProgressBar.jsx';
 import NpsStep from './components/NpsStep.jsx';
@@ -114,11 +115,17 @@ export default function App() {
   }
 
   if (expired) {
-    return <ExpiredScreen />;
+    return (
+      <div className="survey-shell">
+        <Header />
+        <ExpiredScreen />
+      </div>
+    );
   }
 
   return (
     <div className="survey-shell">
+      <Header />
       {step !== 'welcome' && step !== 'thankyou' && (
         <ProgressBar current={currentStepIndex + 1} total={visibleSteps.length} />
       )}
