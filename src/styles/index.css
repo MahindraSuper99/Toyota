@@ -332,7 +332,7 @@ button {
 }
 
 .dealer-name {
-  color: var(--toyota-red);
+  color: inherit;
 }
 
 /* NPS scale */
