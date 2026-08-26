@@ -10,8 +10,11 @@ export default async function handler(req, res) {
 
   const webhookUrl = process.env.PABBLY_WEBHOOK_URL;
   if (!webhookUrl) {
-    console.error('PABBLY_WEBHOOK_URL is not configured');
-    return res.status(500).json({ error: 'Survey submission is not configured' });
+    // Pabbly isn't wired up yet. Let the survey complete normally rather than
+    // blocking the user -- once PABBLY_WEBHOOK_URL is set, submissions start
+    // flowing through for real.
+    console.warn('PABBLY_WEBHOOK_URL is not configured; submission was not forwarded', req.body);
+    return res.status(200).json({ ok: true, forwarded: false });
   }
 
   let body = req.body;
